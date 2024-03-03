@@ -1,0 +1,35 @@
+#Show ip address command:
+
+ip addr show
+
+#change ip address
+
+nmcli connection edit Wired\ connection\ 1
+
+goto ipv4.address
+
+change
+
+back
+
+goto dns
+
+change
+
+back
+
+goto gateway
+
+change
+
+save
+
+back
+
+#change Mac address
+
+sudo macchanger --mac=00:aa:aa:dd:dd:hh ens33
+
+
+
+
