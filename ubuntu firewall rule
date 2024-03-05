@@ -1,0 +1,16 @@
+开启防火墙
+
+sudo ufw enable
+
+允许 80 端口
+
+sudo ufw allow 80/tcp
+
+允许 8080 端口
+
+sudo ufw allow 8080/tcp
+
+允许 22 端口
+
+sudo ufw allow 22/tcp
+
