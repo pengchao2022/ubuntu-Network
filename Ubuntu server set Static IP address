@@ -1,0 +1,31 @@
+$ cd /etc/netplan/
+$ ls -l
+total 4
+-rw-r--r-- 1 root root 116 Oct 12 04:03 00-installer-config.yaml
+
+
+ cat 00-installer-config.yaml
+
+$ sudo vi 00-installer-config.yaml
+# This is the network config written by 'subiquity'
+network:
+  renderer: networkd
+  ethernets:
+    ens33:
+      addresses:
+        - 192.168.1.247/24
+      nameservers:
+        addresses: [4.2.2.2, 8.8.8.8]
+      routes:
+        - to: default
+          via: 192.168.1.1
+  version: 2
+
+
+$ sudo netplan apply
+
+$ ip addr show ens33
+
+
+
+
