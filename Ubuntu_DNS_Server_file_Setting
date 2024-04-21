@@ -1,0 +1,19 @@
+以root用户登录ECS。
+关闭并禁用systemd-resolved服务。
+systemctl stop systemd-resolved
+
+systemctl disable systemd-resolved
+
+默认的/etc/resolv.conf是软链接，删除重建为普通文件。
+rm -rf /etc/resolv.conf
+
+编辑/etc/resolv.conf，增加相关DNS配置。
+vim /etc/resolv.conf
+
+通过添加自定义的nameserver参数增加DNS配置，如下所示：
+
+nameserver 100.125.1.250
+nameserver 100.125.129.250
+
+将/etc/resolv.conf配置文件加锁，防止被dhcp或者其他服务更改。
+chattr +i /etc/resolv.conf
