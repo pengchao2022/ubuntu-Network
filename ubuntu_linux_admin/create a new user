@@ -1,0 +1,6 @@
+
+$ sudo useradd -s <SHELL> -m -d <HomeDir> -g <Group> UserName
+
+for example:
+
+  
